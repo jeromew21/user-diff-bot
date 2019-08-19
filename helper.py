@@ -39,9 +39,13 @@ def jaccard_dist(s1, s2):
     return len(s1 & s2) / len(s1 | s2)
 
 def overlap_dist(s1, s2):
+    s1 = set(s1.keys())
+    s2 = set(s2.keys())
     return len(s1 & s2) / min(len(s1), len(s2))
 
 def dice_dist(s1, s2):
+    s1 = set(s1.keys())
+    s2 = set(s2.keys())
     return (2*len(s1 & s2)) / (len(s1) + len(s2))
 
 def union(s1, s2):

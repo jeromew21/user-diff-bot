@@ -61,7 +61,7 @@ def find_most_similar_users(user, dist_func=jaccard_dist):
     query = """SELECT username, subreddits FROM users where id != ?"""
     data = cursor.execute(query, (user.id,)).fetchall()
     if data:
-        data = [(item[0], dist_func(set(item[1].split(",")), user_set)) for item in data]
+        data = [(item[0], dist_func(json.loads(item[1]), user_set)) for item in data]
         similar = sorted(data, key=lambda item: item[1])[-10:]
         return similar
     conn.close()

@@ -1,0 +1,3 @@
+*.sqlite3
+login_detail
+__pycache__

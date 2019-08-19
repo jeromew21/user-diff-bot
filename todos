@@ -1,0 +1,3 @@
+use NLP to compare writing style
+use weighted Jaccard index (https://mathoverflow.net/questions/123339/weighted-jaccard-similarity)
+    -will have to rewrite some code
